@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,28 +36,32 @@ namespace HW2_5
                 {
                     case "Рыба":
                         Console.WriteLine("Кошка покушала рыбу и её уровень сытости стал: " + (cat.sitost += (int)Food.Fish));
-                        Console.WriteLine("Покормить кошку еще раз? Если да - введите чем: ");
-                        if (answer == "Нет")
-                            Console.ReadKey();
+                        if (cat.sitost <= 90)
+                            Console.WriteLine("Покормить кошку еще раз? Если да - введите чем: ");
+                        else
+                            Console.WriteLine("Кошка наелась и теперь довольная)");
                         break;
+
                     case "Мышь":
                         Console.WriteLine("Кошка покушала мышь и её уровень сытости стал: " + (cat.sitost += (int)Food.Mouse));
-                        Console.WriteLine("Покормить кошку еще раз? Если да - введите чем: ");
-                        if (answer == "Нет")
-                            Console.ReadKey();
+                        if (cat.sitost <= 90)
+                            Console.WriteLine("Покормить кошку еще раз? Если да - введите чем: ");
+                        else
+                            Console.WriteLine("Кошка наелась и теперь довольная)");
                         break;
+
                     case "Корм":
                         Console.WriteLine("Кошка покушала корм и её уровень сытости стал: " + (cat.sitost += (int)Food.Feed));
-                        Console.WriteLine("Покормить кошку еще раз? Если да - введите чем: ");
-                        if (answer == "Нет")
-                            Console.WriteLine("Вы отказались кормить кошку");
+                        if (cat.sitost <= 90)
+                            Console.WriteLine("Покормить кошку еще раз? Если да - введите чем: ");
+                        else
+                            Console.WriteLine("Кошка наелась и теперь довольная)");
                         break;
+
                     default:
                         Console.WriteLine("Введите правильно чем покормить кошку!");
                         break;
                 }
-                if (cat.sitost >= 90)
-                    Console.WriteLine("Кошка больше не хочет кушать!");
             }
         }
     }
